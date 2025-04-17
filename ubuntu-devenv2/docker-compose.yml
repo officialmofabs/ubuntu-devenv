@@ -1,0 +1,36 @@
+#
+# Docker compose file that launches an basic ubuntu fce server with vnc access over vnc client and web browser
+# the server will run jive at startup
+# connect to browser via localhost:6901/?password=vncpassword
+#
+# Defines:
+#   - itango: iTango interactive session
+#
+# Requires: 
+#   - tbase/docker compose up
+#   - external networ must be defined by docker network create $DOCKER_NETWORK
+
+version: '2'
+
+services:
+  jive:
+    image: gerhardlr/tango_gui:latest
+    container_name: tang_gui
+    environment:
+      - TANGO_HOST=databaseds:10000 
+    entrypoint:
+      - /dockerstartup/vnc_startup.sh
+      - /usr/local/bin/wait-for-it.sh
+      - databaseds:10000
+      - --timeout=30
+      - --strict
+      - --
+      - /usr/local/bin/jive
+      #- tail -f /dev/null
+    ports:
+      - 5901:5901
+      - 6901:6901
+networks:
+  default:
+    external:
+      name: $DOCKER_NETWORK

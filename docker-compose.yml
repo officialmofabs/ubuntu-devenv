@@ -1,0 +1,110 @@
+services:
+  vnc1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vnc_ubuntu1
+    ports:
+      - "5901:5901"
+    restart: unless-stopped
+    volumes:
+      - ./data/vnc1:/root
+
+  vnc2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vnc_ubuntu2
+    ports:
+      - "5902:5901"
+    restart: unless-stopped
+    volumes:
+      - ./data/vnc2:/root
+
+  vnc3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vnc_ubuntu3
+    ports:
+      - "5903:5901"
+    restart: unless-stopped
+    volumes:
+      - ./data/vnc3:/root
+
+  vnc4:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vnc_ubuntu4
+    ports:
+      - "5904:5901"
+    restart: unless-stopped
+    volumes:
+      - ./data/vnc4:/root
+
+  vnc5:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vnc_ubuntu5
+    ports:
+      - "5905:5901"
+    restart: unless-stopped
+    volumes:
+      - ./data/vnc5:/root
+
+  vnc6:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vnc_ubuntu6
+    ports:
+      - "5906:5901"
+    restart: unless-stopped
+    volumes:
+      - ./data/vnc6:/root
+
+  vnc7:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vnc_ubuntu7
+    ports:
+      - "5907:5901"
+    restart: unless-stopped
+    volumes:
+      - ./data/vnc7:/root
+
+  vnc8:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vnc_ubuntu8
+    ports:
+      - "5908:5901"
+    restart: unless-stopped
+    volumes:
+      - ./data/vnc8:/root
+
+  vnc9:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vnc_ubuntu9
+    ports:
+      - "5909:5901"
+    restart: unless-stopped
+    volumes:
+      - ./data/vnc9:/root
+
+  vnc10:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vnc_ubuntu10
+    ports:
+      - "5910:5901"
+    restart: unless-stopped
+    volumes:
+      - ./data/vnc10:/root
