@@ -1,0 +1,11 @@
+ services:
+     ecampusdev:
+         build:
+             context: .
+             dockerfile: ecampusdev.dockerfile
+         image: tutorial/ecampusdev
+         ports:
+             - 8112:8112
+         volumes:
+             - ./downloads:/downloads
+             - ./config/ecampusdev:/config

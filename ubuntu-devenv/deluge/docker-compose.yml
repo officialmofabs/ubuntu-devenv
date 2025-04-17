@@ -1,0 +1,11 @@
+ services:
+     deluge:
+         build:
+             context: .
+             dockerfile: deluge.dockerfile
+         image: tutorial/deluge
+         ports:
+             - 8112:8112
+         volumes:
+             - ./downloads:/downloads
+             - ./config/deluge:/config
